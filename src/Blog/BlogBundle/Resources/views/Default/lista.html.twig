@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+{% block title %}Blog{% endblock %}
+{% block body %}
+    <a href="{{ path('blog_nuevo') }}">Nuevo</a>
+    <table cellpadding="0" cellspacing="0" border="0" class="dTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in blogs %}
+            <tr>
+                <td>{{ blog.id }}</td>
+                <td>{{ blog.titulo }}</td>
+                <td>
+                    <a href="{{ path('blog_editar', { 'id': blog.id }) }}">Editar</a>
+                    |
+                    <a href="{{ path('blog_eliminar', { 'id': blog.id }) }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+{% endblock %}

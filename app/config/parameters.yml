@@ -1,0 +1,14 @@
+parameters:
+  database_driver: pdo_mysql
+  database_host: 127.0.0.1
+  database_port: null
+  database_name: symfony2_taller
+  database_user: root
+  database_password: kokobongo123
+  mailer_transport: smtp
+  mailer_host: 127.0.0.1
+  mailer_user: null
+  mailer_password: null
+  locale: en
+  secret: 62d10b4b175fefe68cb52efce1c3142d9
+  database_path: null

@@ -1,0 +1,25 @@
+blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BlogBundle:Default:index }
+
+blog_lista:
+    pattern:  /blog/
+    defaults: { _controller: BlogBundle:Default:blog }
+
+blog_nuevo:
+    pattern:  /blog/nuevo
+    defaults: { _controller: BlogBundle:Default:nuevo }
+
+blog_editar:
+    pattern:  /blog/editar/{id}
+    defaults: { _controller: BlogBundle:Default:editar }
+    requirements:
+        _method: GET|POST
+        id: \d+
+
+blog_eliminar:
+    pattern:  /blog/eliminar/{id}
+    defaults: { _controller: BlogBundle:Default:eliminar }
+    requirements:
+        _method: GET|POST
+        id: \d+

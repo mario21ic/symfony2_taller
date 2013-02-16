@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+                <table cellpadding="0" cellspacing="0" border="0" class="dTable">
+                    <thead>
+                        <tr>
+                        <th>Id<span class="sorting" style="display: block;"></span></th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Creado</th>
+                        <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for documento in documentos %}
+                        <tr class="gradeX">
+                            <td>{{ documento.id }}</td>
+                            <td>{{ documento.codigo }}</td>
+                            <td><a href="{{ path('DocumentoBundle_edit', { 'id': documento.id }) }}">{{ documento.nombre }}</a></td>
+                            <td>{{ documento.createAt | date() }}</td>
+                            <td>
+                                <a href="{{ path('DocumentoBundle_edit', { 'id': documento.id }) }}">Editar</a>
+                                 | 
+                                <a href="{{ path('DocumentoBundle_delete', { 'id': documento.id }) }}">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table> 
+{% endblock %}
